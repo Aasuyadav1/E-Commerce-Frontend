@@ -1,0 +1,80 @@
+*{
+  font-family: 'Jost', sans-serif;
+}
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+ 
+ 
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-bullet-active{
+  background-color: black !important;
+}
+
+/* .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+.image-hover::before {
+  content: '';
+  background: url('https://umino.mageblueskytech.com/media/wysiwyg/2_1_d1_1.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform-origin: top left;
+  transition: transform 0.8s ease;
+  cursor: pointer;
+}
+.second::before{
+  content: '';
+  background: url('https://umino.mageblueskytech.com/media/wysiwyg/1_d1.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform-origin: top left;
+  transition: transform 0.8s ease;
+  cursor: pointer;
+}
+.image-hover:hover::before {
+  transform: scale(1.1);
+}
+.active{
+  color: red;
+}
