@@ -10,26 +10,24 @@ import Singlecategory from './Components/Singlecategory'
 import Singleproduct from './Components/Singleproduct'
 import Shoppingcart from './Components/Shoppingcart'
 
-
-
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <> 
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Layout/>}>
-        <Route path='' element={<Home/>}/>
-        <Route path='about' element={<About/>}/>
-        <Route path='shop' element={<Shop/>}/>
-        <Route path='contactus' element={<Contact/>}/>
-        <Route path='shoppingCart' element={<Shoppingcart/>}/>
-        <Route path='category/:name' element={<Singlecategory/>}/>
-        <Route path='products/:id' element={<Singleproduct/>}/>
-        </Route>
-      </Routes>
-    </BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Layout/>}>
+            <Route index element={<Home/>} />
+            <Route path='about' element={<About/>}/>
+            <Route path='shop' element={<Shop/>}/>
+            <Route path='contactus' element={<Contact/>}/>
+            <Route path='shoppingCart' element={<Shoppingcart/>}/>
+            <Route path='category/:name' element={<Singlecategory/>}/>
+            <Route path='products/:id' element={<Singleproduct/>}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

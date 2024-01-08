@@ -33,7 +33,7 @@ function Trending() {
             )
         }
       </div>
-      <button className="mx-auto px-[50px] uppercase mt-[80px] font-semibold py-[8px] duration-300 ease-linear  hover:bg-black hover:text-white px-[10px] py-[10px]  border-solid border-[2px] border-black text-black rounded-full block  " onClick={handleButton}>Load More</button>
+      <button className="mx-auto  uppercase mt-[80px] font-semibold py-[8px] duration-300 ease-linear  hover:bg-black hover:text-white px-[10px] py-[10px]  border-solid border-[2px] border-black text-black rounded-full block  " onClick={handleButton}>Load More</button>
     </div>
   );
 }

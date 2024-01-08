@@ -4,12 +4,12 @@
 #app {
   height: 100%;
 }
-html,
+/* html,
 body {
   position: relative;
   height: 100%;
   overflow-x: hidden;
-}
+} */
 
 body {
 
