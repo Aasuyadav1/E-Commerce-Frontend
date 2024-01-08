@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { data } from '../Productdata';
+import { dataContext } from '../Productdata';
 
 function shuffleArray(array) {
-  // it generate random data from array when page renders this methods called as Fisher-Yates
-  
+  // Fisher-Yates shuffle algorithm
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
@@ -13,12 +12,13 @@ function shuffleArray(array) {
 }
 
 function Shop() {
+  const { productData } = useContext(dataContext);
   const [shuffledData, setShuffledData] = useState([]);
 
   useEffect(() => {
     // Shuffle the data array when the component mounts or when data changes
-    setShuffledData(shuffleArray(data));
-  }, [data]);
+    setShuffledData(shuffleArray(productData));
+  }, [productData]);
 
   return (
     <div>

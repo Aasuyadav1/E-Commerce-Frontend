@@ -14,7 +14,7 @@ function Home() {
       <Hero/>
       <Category/>
       <Trending/>
-      <Button title='Load More' class="mx-auto px-[50px] uppercase mt-[80px] font-semibold py-[8px] duration-300 ease-linear  hover:bg-black hover:text-white "/>
+      
       <Trendbanner/>
       <Desireproduct/>
       <Shopinfo/>

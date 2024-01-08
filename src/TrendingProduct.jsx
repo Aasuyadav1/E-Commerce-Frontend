@@ -1,7 +1,11 @@
-import React from 'react'
-import { data } from './Productdata'
+// TrendingProducts.js
+import { useContext } from 'react';
+import { dataContext } from './Productdata';
 
+// Assuming productData is an array of objects with a 'trending' property
+const useTrendingProducts = () => {
+  const { productData } = useContext(dataContext);
+  return productData.filter((cur) => cur.trending);
+};
 
-export const trendingProducts = data.filter((cur)=>
-    cur.trending ? cur : null
-) 
+export default useTrendingProducts;

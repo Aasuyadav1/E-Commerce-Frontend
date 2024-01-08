@@ -1,10 +1,20 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import '../App.css';
+import { cartContext } from "../ContextApi/cart";
+import { useContext } from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 
 function Header() {
+  const {cartItems, setCartItems} = useContext(cartContext)
   const [toggle, setToggle] = React.useState(false);
+  const [cartCount, setCartCount] = useState(0);
 
+    useEffect(()=>{
+      let length = cartItems.length;
+      setCartCount(length)
+    },[setCartItems,cartItems])
   const navHandle = () => {
     setToggle(!toggle);
   };
@@ -63,8 +73,11 @@ function Header() {
           <Link>
             <i className="ri-heart-line hidden sm:block"></i>
           </Link>
-          <Link>
+          <Link to="/shoppingCart">
+            <div className="relative">
             <i className="ri-shopping-cart-line"></i>
+            <div className="absolute top-0 right-0 w-[15px] h-[15px] bg-red-600 flex justify-center items-center text-white rounded-full text-[14px] ">{cartCount}</div>
+            </div>
           </Link>
         </div>
       </div>

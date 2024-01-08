@@ -1,9 +1,10 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { data } from '../Productdata'
+import { dataContext } from '../Productdata'
 
 function Desireproduct() {
-    const desireProducts = data.filter((cur)=>
+  const {productData} = useContext(dataContext)
+    const desireProducts = productData.filter((cur)=>
         cur.desire ? cur : null
     )
     let [desireData, setDesireData] = useState(desireProducts)

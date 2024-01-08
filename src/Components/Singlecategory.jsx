@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { data } from "../Productdata";
+import { dataContext } from "../Productdata";
 
 function Singlecategory() {
+  const {productData} = useContext(dataContext)
+ 
   let { name } = useParams(); // used for getting the url data
   const [filtered, setFilteredCategory] = useState([]);
 
   useEffect(() => {
-    const filteredCategory = data.filter((cur) => cur.category === name);
+    const filteredCategory = productData.filter((cur) => cur.category === name);
     console.log(filteredCategory);
     setFilteredCategory(filteredCategory);
   }, [name]);

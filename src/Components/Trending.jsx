@@ -1,8 +1,13 @@
 import React from "react";
-import { trendingProducts } from "../TrendingProduct";
-import { Link } from "react-router-dom";
+import useTrendingProducts from "../TrendingProduct"
+import { Link, useNavigate } from "react-router-dom";
 
 function Trending() {
+  const trendingProducts = useTrendingProducts();
+  const navigate = useNavigate();
+  const handleButton = ()=>{
+    navigate('/shop')
+  }
   return (
     <div>
       <h3 className="text-center mt-[100px] text-[3rem] font-medium leading-none">
@@ -28,6 +33,7 @@ function Trending() {
             )
         }
       </div>
+      <button className="mx-auto px-[50px] uppercase mt-[80px] font-semibold py-[8px] duration-300 ease-linear  hover:bg-black hover:text-white px-[10px] py-[10px]  border-solid border-[2px] border-black text-black rounded-full block  " onClick={handleButton}>Load More</button>
     </div>
   );
 }
