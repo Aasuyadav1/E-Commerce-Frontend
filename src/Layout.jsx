@@ -6,7 +6,8 @@ import Scrolltop from './Components/Scrolltop'
 
 function Layout() {
   return (
-    <> 
+    <>  
+        <Scrolltop/>
         <Header/>
         
         <Outlet/>
