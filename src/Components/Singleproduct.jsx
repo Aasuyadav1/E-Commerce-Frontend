@@ -2,9 +2,10 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { dataContext } from "../Productdata";
 import Button from "./Button";
-
 import { Link } from "react-router-dom";
 import { cartContext } from "../Cart";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 
 
@@ -87,14 +88,14 @@ function Singleproduct() {
           <div className="px-4 flex flex-col md:flex-row items-start gap-8">
             <div className="max-w-[650px] w-full aspect-[1/1.2] rounded overflow-hidden cursor-pointer object-cover">
               <img
-                src={activeData[0].productImage}
+                src={activeData[0].productImage || <Skeleton /> }
                 alt=""
                 className="w-full h-full object-cover"
               />
             </div>
             <div>
               <div className="text-xl bg-[#9C6D3A] text-white rounded-full flex justify-center items-center px-4 py-0 flex-wrap w-fit">
-                -{activeData[0].discountPercentage}%
+                -{activeData[0].discountPercentage || <Skeleton />}%
               </div>
               <p className="text-4xl mt-3 ">{activeData[0].name}</p>
               <div className="flex mt-1 items-center gap-2">
@@ -110,9 +111,9 @@ function Singleproduct() {
                 </div>
               </div>
               <p className="text-4xl mt-6 text-[#B6783A] font-semibold l">
-                $ {activeData[0].afterDiscountamt}
+                $ {activeData[0].afterDiscountamt || <Skeleton />}
               </p>
-              <p className="mt-8 text-xl">{activeData[0].description}</p>
+              <p className="mt-8 text-xl">{activeData[0].description || <Skeleton />}</p>
               <p className="text-xl mt-5">
                 {Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000} people
                 are viewing this right now
@@ -140,7 +141,7 @@ function Singleproduct() {
               <div className="flex sm:gap-10 mt-6 gap-2">
                 <div className="flex gap-6 justify-center items-center text-xl bg-[rgb(242,242,242)] w-fit py-0 px-6 rounded-full shadow-md">
                   <i className="ri-subtract-fill text-2xl cursor-pointer" onClick={()=>handleSub(activeData[0].id)}></i>
-                  <p>{activeData[0].quantity}</p>
+                  <p>{activeData[0].quantity || <Skeleton />}</p>
                   <i className="ri-add-line cursor-pointer" onClick={()=>handleAdd(activeData[0].id)}></i>
                 </div>
                 <button className=" px-[10px] py-[10px]  border-solid border-[2px] border-black text-black rounded-full block w-full bg-black text-white py-4" onClick={()=>handleCart(activeData[0].id)}>{
@@ -161,11 +162,11 @@ function Singleproduct() {
                 </div>
                 <div className="grid grid-cols-2 justify-between items-center">
                   <p className="opacity-80">SKU :</p>
-                  <p className="text-xl ">f00{activeData[0].id}</p>
+                  <p className="text-xl ">f00{activeData[0].id || <Skeleton />}</p>
                 </div>
                 <div className="grid grid-cols-2 justify-between items-center">
                   <p className="opacity-80">Categories :</p>
-                  <p className="text-xl ">{activeData[0].category}</p>
+                  <p className="text-xl ">{activeData[0].category || <Skeleton />}</p>
                 </div>
               </div>
               <hr className="mt-8" />
@@ -195,14 +196,14 @@ function Singleproduct() {
             <Link to={`/products/${cur.id}`}>
               <div className="overflow-hidden max-w-[300px] w-full aspect-[1/1.2]  object-cover rounded-lg">
                 <img
-                  src={cur.productImage}
-                  alt={cur.name}
+                  src={cur.productImage || <Skeleton />}
+                  alt={cur.name || <Skeleton />}
                   className="w-full h-full object-cover duration-500 ease-in-out grayscale-[50%] hover:grayscale-0 hover:scale-110"
                 />
               </div>
               <div className="w-full">
-                <p className="mt-3 font-medium text-xl leading-none ">{cur.name}</p>
-                <p className="text-red-400 text-xl">$ {cur.afterDiscountamt}</p>
+                <p className="mt-3 font-medium text-xl leading-none ">{cur.name || <Skeleton />}</p>
+                <p className="text-red-400 text-xl">$ {cur.afterDiscountamt || <Skeleton />}</p>
               </div>
             </Link>
           </div>

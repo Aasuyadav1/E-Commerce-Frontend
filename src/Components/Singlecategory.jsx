@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { dataContext } from "../Productdata";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 function Singlecategory() {
   const {productData} = useContext(dataContext)
@@ -16,16 +18,17 @@ function Singlecategory() {
 
   return (
     <div className=" mt-32">
-      <h3 className="text-6xl font-medium text-center ">{name}</h3>
+      
+      <h3 className="text-6xl font-medium text-center ">{name || <Skeleton/>}</h3>
       <div className="text-xl text-center justify-center items-center flex gap-1 mt-1 cursor-pointer">
-        <Link to="/">Home</Link> / <span className="opacity-70"> {name}</span>
+        <Link to="/">Home</Link> / <span className="opacity-70"> {name || <Skeleton/> }</span>
       </div>
       <div className="mt-10">
         <div className="w-full grid grid-cols-2 mt-[60px] gap-x-4 place-items-center place-content-center place-self-center px-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
           {filtered.map((cur, index) => (
             <div key={index} className="w-fit h-full overflow-hidden">
               <Link to={`/products/${cur.id}`}>
-                <div className="overflow-hidden max-w-[300px] w-full aspect-[1/1.2]  object-cover rounded-lg">
+                <div className="overflow-hidden max-w-[300px] w-full aspect-[1/1.2]   object-cover rounded-lg">
                   <img
                     src={cur.productImage}
                     alt={cur.name}
@@ -34,10 +37,10 @@ function Singlecategory() {
                 </div>
                 <div className="w-full">
                   <p className="mt-3 font-medium text-xl leading-none ">
-                    {cur.name}
+                    { cur.name ||<Skeleton height={30}/>}
                   </p>
                   <p className=" text-red-400 text-xl">
-                    $ {cur.afterDiscountamt}
+                    $ {cur.afterDiscountamt || <Skeleton/>}
                   </p>
                 </div>
               </Link>
