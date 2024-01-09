@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { cartContext } from "../ContextApi/cart";
+import { cartContext } from "../Contextapi/cart";
 
 function Shoppingcart() {
   const { cartItems, setCartItems } = useContext(cartContext);

@@ -4,7 +4,7 @@ import { dataContext } from "../Productdata";
 import Button from "./Button";
 
 import { Link } from "react-router-dom";
-import { cartContext } from "../ContextApi/cart";
+import { cartContext } from "../Contextapi/cart";
 
 
 

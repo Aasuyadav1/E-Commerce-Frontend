@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Hero from './Hero'
 import Category from './Category'
 import Trending from './Trending'
-import Button from './Button'
+
 import Trendbanner from './Trendbanner'
 import Desireproduct from './Desireproduct'
 import Shopinfo from './Shopinfo'
