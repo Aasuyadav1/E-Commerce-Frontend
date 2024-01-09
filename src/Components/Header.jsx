@@ -1,13 +1,14 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import '../App.css';
-import { cartContext } from "../Contextapi/cart";
+import { cartContext } from "../Cart";
 import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 
 function Header() {
   const {cartItems, setCartItems} = useContext(cartContext)
+  console.log(cartItems)
   const [toggle, setToggle] = React.useState(false);
   const [cartCount, setCartCount] = useState(0);
 

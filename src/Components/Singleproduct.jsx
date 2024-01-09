@@ -4,7 +4,7 @@ import { dataContext } from "../Productdata";
 import Button from "./Button";
 
 import { Link } from "react-router-dom";
-import { cartContext } from "../Contextapi/cart";
+import { cartContext } from "../Cart";
 
 
 
@@ -12,7 +12,7 @@ function Singleproduct() {
   const {productData, setProductData} = useContext(dataContext)
   
  
-  let {cartItems, setCartItems} = useContext(cartContext)
+  const {cartItems, setCartItems} = useContext(cartContext)
 
 
 

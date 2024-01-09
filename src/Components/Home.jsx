@@ -7,10 +7,12 @@ import Trendbanner from './Trendbanner'
 import Desireproduct from './Desireproduct'
 import Shopinfo from './Shopinfo'
 
+
 function Home() {
  
   return (
     <div>
+      
       <Hero/>
       <Category/>
       <Trending/>
