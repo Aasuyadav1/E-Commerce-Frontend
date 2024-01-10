@@ -5,8 +5,10 @@ import { cartContext } from "../Cart";
 import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
+import { dataContext } from "../Productdata";
 
 function Header() {
+  const {searchToggle, setSearchToggle} = useContext(dataContext);
   const {cartItems, setCartItems} = useContext(cartContext)
   console.log(cartItems)
   const [toggle, setToggle] = React.useState(false);
@@ -32,7 +34,7 @@ function Header() {
 
   return (
     <>
-      <div className="px-[10px] py-[20px] bg-[#FFFFFF] flex justify-between items-center fixed w-full z-50 top-0 shadow-md">
+            <div className="px-[10px] py-[20px] bg-[#FFFFFF] flex justify-between items-center fixed w-full z-50 top-0 shadow-md">
         <i
           className={`${
             toggle ? "ri-close-fill" : "ri-menu-line"
@@ -66,7 +68,7 @@ function Header() {
         </ul>
         <div className="flex gap-[5px] justify-around items-center text-[1.3rem] sm:gap-[20px]">
           <Link>
-            <i className="ri-search-line"></i>
+            <i className="ri-search-line" onClick={()=>setSearchToggle(!searchToggle)}></i>
           </Link>
           <Link>
             <i className="ri-user-line hidden sm:block"></i>
@@ -107,6 +109,7 @@ function Header() {
           <p>Cart</p>
         </Link>
       </div>
+
     </>
   );
 }

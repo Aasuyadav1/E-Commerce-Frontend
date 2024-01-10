@@ -1404,9 +1404,10 @@ function Productdata({children}) {
             ]
         }
     ])
+    const [searchToggle,setSearchToggle] = useState(false)
     
   return (
-    <dataContext.Provider value={{productData, setProductData}}>
+    <dataContext.Provider value={{productData, setProductData, searchToggle, setSearchToggle}}>
         {children}
     </dataContext.Provider>
   )
