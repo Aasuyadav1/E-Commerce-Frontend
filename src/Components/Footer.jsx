@@ -3,7 +3,7 @@ import Button from "./Button";
 
 function Footer() {
   return (
-    <div className="px-4 py-14 mt-40 grid grid-cols-1 gap-y-10 lg:grid-cols-4 lg:gap-x-20 border-y-[2px] border-[rgb(219,219,221)] border-solid">
+    <div className="px-4 py-14 mt-24 grid grid-cols-1 gap-y-10 lg:grid-cols-4 lg:gap-x-2 border-y-[2px] border-[rgb(219,219,221)] border-solid">
       <div>
         <img
           src="https://umino.mageblueskytech.com/media/logo/default/logo_umino.png"
@@ -47,9 +47,9 @@ function Footer() {
       <div>
         <h3 className="font-bold text-xl">SIGN UP TO NEWSLETTER</h3>
         <p className="mt-1 opacity-90">Enter your email address to get $10 off your first order and free shipping. Updates information on Sales and Offers.</p>
-        <form className="flex gap-1 items-center mt-4" onSubmit={(e)=>e.preventDefault()}>
-          <input type="email" placeholder="Your Email" className="px-[8px] py-[10px] border-black border-[2px] border-solid rounded-full max-w-[250px] w-full" required/>
-          <Button title="Subscribe" class="bg-black text-white px-5"/>
+        <form className="sm:flex items-center mt-4 flex flex-col gap-4" onSubmit={(e)=>e.preventDefault()}>
+          <input type="email" placeholder="Your Email" className="px-[8px] py-[10px] border-black border-[2px] w-full border-solid rounded-full " required/>
+          <Button title="Subscribe" class="bg-black text-white px-10 w-full"/>
         </form>
       </div>
     </div>

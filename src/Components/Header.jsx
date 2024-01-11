@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
+import { Link,NavLink} from "react-router-dom";
 import '../App.css';
 import { cartContext } from "../Cart";
 import { useContext } from "react";
@@ -21,6 +21,8 @@ function Header() {
   const navHandle = () => {
     setToggle(!toggle);
   };
+
+ 
 
   const handleResize = () => {
     if (window.innerWidth >= 640) {
@@ -53,12 +55,12 @@ function Header() {
             toggle ? "flex active-nav " : "hidden"
           }`}
         >
-          <Link to='/'>
+          <NavLink to='/'>
             <li>Home</li>
-          </Link>
-          <Link to='shop'>
+          </NavLink>
+          <NavLink to='shop'>
             <li>Shop</li>
-          </Link>
+          </NavLink>
           <Link>
             <li>Blog</li>
           </Link>
@@ -70,18 +72,18 @@ function Header() {
           <Link>
             <i className="ri-search-line" onClick={()=>setSearchToggle(!searchToggle)}></i>
           </Link>
-          <Link>
+          <NavLink to='/login'>
             <i className="ri-user-line hidden sm:block"></i>
-          </Link>
+          </NavLink>
           <Link>
             <i className="ri-heart-line hidden sm:block"></i>
           </Link>
-          <Link to="/shoppingCart">
+          <NavLink to="/shoppingCart">
             <div className="relative">
             <i className="ri-shopping-cart-line"></i>
             <div className="absolute top-0 right-0 w-[15px] h-[15px] bg-red-600 flex justify-center items-center text-white rounded-full text-[14px] ">{cartCount}</div>
             </div>
-          </Link>
+          </NavLink>
         </div>
       </div>
       {/* Overlay */}

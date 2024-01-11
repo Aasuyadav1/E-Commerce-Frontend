@@ -11,10 +11,10 @@ function Desireproduct() {
     
   return (
     <div className='mt-[50px]'>
-      <h3 className="text-center mt-[100px] text-[3rem] font-medium leading-none">
+      <h3 className="text-center mt-[100px] text-[3rem] font-medium leading-none px-3">
       You Must Have
       </h3>
-      <p className="text-center text-[1.1rem] leading-none mt-[20px]">
+      <p className="text-center text-[1.1rem] leading-none mt-[20px] px-3">
       Here’s some of our most popular products people are in love with.
       </p>
       <div className="w-full grid grid-cols-2 mt-[60px] gap-x-4 place-items-center place-content-center place-self-center px-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4">

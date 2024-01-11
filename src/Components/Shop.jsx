@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { dataContext } from '../Productdata';
+import Filterslider from './Filterslider';
 
 function shuffleArray(array) {
   // Fisher-Yates shuffle algorithm
@@ -19,10 +20,20 @@ function Shop() {
     // Shuffle the data array when the component mounts or when data changes
     setShuffledData(shuffleArray(productData));
   }, [productData]);
+  
 
   return (
-    <div>
-      <div className="w-full grid grid-cols-2 mt-[150px] gap-x-4 place-items-center place-content-center place-self-center px-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
+    <div className='mt-[120px] '>
+      
+      <h3 className="text-5xl font-medium text-center px-3">Shop</h3>
+      <div className="text-xl text-center justify-center items-center flex gap-1 mt-2 cursor-pointer px-3">
+        <Link to="/">Home</Link> /{" "}
+        <span className="opacity-70">Shop</span>
+      </div>
+      <div className="w-full grid grid-cols-2 mt-[50px] gap-x-4 place-items-center place-content-center place-self-center px-4 gap-y-10 md:grid-cols-3 lg:grid-cols-4">
+        
+        <Filterslider/>
+        
         {shuffledData.map((cur, index) => (
           <div key={index} className="w-fit h-full overflow-hidden">
             <Link to={`/products/${cur.id}`}>

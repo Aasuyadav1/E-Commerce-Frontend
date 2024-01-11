@@ -43,8 +43,8 @@ function Shoppingcart() {
 
   return (
     <div className="mt-[150px]">
-      <h3 className="text-5xl font-medium text-center">Shopping Cart</h3>
-      <div className="text-xl text-center justify-center items-center flex gap-1 mt-2 cursor-pointer">
+      <h3 className="text-5xl font-medium text-center px-3">Shopping Cart</h3>
+      <div className="text-xl text-center justify-center items-center flex gap-1 mt-2 cursor-pointer px-3">
         <Link to="/">Home</Link> /{" "}
         <span className="opacity-70"> Shopping Cart</span>
       </div>

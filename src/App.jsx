@@ -9,11 +9,13 @@ import Contact from './Components/Contact'
 import Singlecategory from './Components/Singlecategory'
 import Singleproduct from './Components/Singleproduct'
 import Shoppingcart from './Components/Shoppingcart'
+import Login from './Components/Login'
+import Createaccount from './Components/Createaccount'
 
 
 function App() {
   const [count, setCount] = useState(0)
-
+  
   return (
     <> 
       <BrowserRouter>
@@ -24,9 +26,10 @@ function App() {
             <Route path='shop' element={<Shop/>}/>
             <Route path='contactus' element={<Contact/>}/>
             <Route path='shoppingCart' element={<Shoppingcart/>}/>
-
             <Route path='category/:name' element={<Singlecategory/>}/>
             <Route path='products/:id' element={<Singleproduct/>}/>
+            <Route path='login' element={<Login/>}/>
+            <Route path='createaccount' element={<Createaccount/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

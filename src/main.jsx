@@ -5,12 +5,14 @@ import "./index.css";
 import Cart from "./Cart.jsx";
 import Productdata from "./Productdata.jsx";
 
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <Productdata>
-      
+ 
+    <Cart>
+      <Productdata>
         <App />
-     
-    </Productdata>
+      </Productdata>
+    </Cart>
   </React.StrictMode>
 );

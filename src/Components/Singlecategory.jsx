@@ -19,8 +19,8 @@ function Singlecategory() {
   return (
     <div className=" mt-32">
       
-      <h3 className="text-6xl font-medium text-center ">{name || <Skeleton/>}</h3>
-      <div className="text-xl text-center justify-center items-center flex gap-1 mt-1 cursor-pointer">
+      <h3 className="text-6xl font-medium text-center px-3">{name || <Skeleton/>}</h3>
+      <div className="text-xl px-3 text-center justify-center items-center flex gap-1 mt-1 cursor-pointer">
         <Link to="/">Home</Link> / <span className="opacity-70"> {name || <Skeleton/> }</span>
       </div>
       <div className="mt-10">

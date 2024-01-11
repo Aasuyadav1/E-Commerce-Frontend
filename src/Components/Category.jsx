@@ -1,14 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "../App.css"
-
-
-
 // import required modules
 import { Pagination } from "swiper/modules";
 
@@ -46,11 +42,11 @@ function Category() {
     },
   ];
   return (
-    <div>
-      <h3 className="text-center mt-[100px] text-[3rem] font-medium leading-none">
+    <div className="px-3">
+      <h3 className="text-center mt-[100px] text-[3rem] font-medium leading-none ">
         You Might Like
       </h3>
-      <p className="text-center text-[1.1rem] leading-none mt-[20px]">
+      <p className="text-center text-[1.1rem] leading-none mt-[20px] ">
         Our products are designed for everyone, environmentally friendly.
       </p>
 
@@ -95,7 +91,7 @@ function Category() {
                   <img
                     src={cur.image}
                     alt=""
-                    className="w-[160px] aspect-square rounded-full object-cover"
+                    className="w-[160px] aspect-square rounded-full object-cover grayscale-[50%] hover:grayscale-0"
                   />
                 </Link>
               </div>

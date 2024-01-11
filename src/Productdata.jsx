@@ -6,7 +6,7 @@ function Productdata({children}) {
     const [productData, setProductData] = useState([
         {
             "id": 1,
-            "name": "Worricow Good Quality Portable Wireless Sports HD Sound Bass Mic SD Card Slot Bluetooth Headset  (Blue, In the Ear)",
+            "name": "Worricow Good ",
             "productImage": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "quantity": 1,
             "discountPercentage": 10,
@@ -44,7 +44,7 @@ function Productdata({children}) {
         },
         {
             "id": 2,
-            "name": "watech",
+            "name": "Watech",
             "productImage": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "quantity": 1,
             "discountPercentage": 10,
@@ -67,7 +67,7 @@ function Productdata({children}) {
         },
         {
             "id": 3,
-            "name": "earphone",
+            "name": "Earphone",
             "productImage": "https://images.unsplash.com/photo-1504274066651-8d31a536b11a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D",
             "quantity": 1,
             "discountPercentage": 10,
@@ -90,7 +90,7 @@ function Productdata({children}) {
         },
         {
             "id": 4,
-            "name": "ipad collections",
+            "name": "Ipad collections",
             "productImage": "https://images.unsplash.com/photo-1524289286702-f07229da36f5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "quantity": 1,
             "discountPercentage": 10,
@@ -113,7 +113,7 @@ function Productdata({children}) {
         },
         {
             "id": 5,
-            "name": "watch collections",
+            "name": "Watch collections",
             "productImage": "https://images.unsplash.com/photo-1526887520775-4b14b8aed897?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             "quantity": 1,
             "discountPercentage": 10,

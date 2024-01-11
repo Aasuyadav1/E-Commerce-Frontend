@@ -32,8 +32,9 @@ function Singleproduct() {
     const datas = productData.filter((cur)=>
         cur.category == category
     )
-    let slicedData = productData.slice(1,9);
+    let slicedData = datas.slice(1,9);
     setRelatedProduct(slicedData)
+    
   
   }, [id,location.path]);
   const handleAdd = (productId) => {
