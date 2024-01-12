@@ -13,7 +13,7 @@ function Layout() {
   
   return (
     <>
-      <ScrollToTop smooth style={{ color:'white', width:40, height:40, display:'flex', justifyContent:'center', alignItems:'center', borderRadius:100, bottom:60, right:10 }}/>
+      <ScrollToTop smooth style={{ color:'white', width:40, height:40, display:'flex', justifyContent:'center', alignItems:'center', borderRadius:100, bottom:60, right:10, border:'2px solid black'}}/>
       <Cart>
       <Scrolltop />
       {

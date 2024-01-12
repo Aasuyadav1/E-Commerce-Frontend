@@ -6,34 +6,34 @@ import 'react-loading-skeleton/dist/skeleton.css';
 
 
 function Searchbox() {
-  const { productData, setProductData, searchToggle, setSearchToggle } = useContext(dataContext);
-  const [searchProduct, setSearchProduct] = useState([]);
-
+  const { productData, setSearchToggle } = useContext(dataContext);
+  const [searchProduct, setSearchProduct] = useState(productData.filter((cur) => cur.desire));
+  const [searchInput, setSearchInput] = useState('');
 
   useEffect(() => {
-    if (!searchProduct.length) {
+    if (!searchInput.trim()) {
       // If no search input, display default data
       const topSearch = productData.filter((cur) => cur.desire);
       setSearchProduct(topSearch);
     }
-  }, [searchProduct, productData]);
-
+  }, [searchInput, productData]);
 
   const searchHandle = (e) => {
     const value = e.target.value;
-    if (value.trim() === '') {
+    setSearchInput(value);
+
+    if (!value.trim()) {
       const topSearch = productData.filter((cur) => cur.desire);
       setSearchProduct(topSearch);
     } else {
-      const filteredData = productData.filter((cur) => cur.name.includes(value));
+      const filteredData = productData.filter((cur) => cur.name.toLowerCase().includes(value.toLowerCase()));
       setSearchProduct(filteredData);
     }
   };
 
-  const handleOver = ()=>{
-    setSearchToggle(!searchToggle)
-  }
-
+  const handleOver = () => {
+    setSearchToggle(false);
+  };
   return (
     <div className='fixed z-50 top-0'> 
        <div
@@ -55,11 +55,19 @@ function Searchbox() {
           className={` text-[1.1rem]  itms-center leading-none tracking-wide flex-col  w-full bg-white  text-xl  sm:justify-center  sm:flex-row sm:bg-transparent sm:h-fit sm:flex 
           }`}
         >
-          <div className='relative max-w-[600px] w-full'>
-          <input type="search" className='border-[2px] border-solid border-black cursor-pointer px-3 py-2 w-full rounded-full' placeholder='looking for...' onChange={(e)=>searchHandle(e)} id='search'/>
-          <label htmlFor="search" className='absolute top-[13px] right-[15px] cursor-pointer'> <i className="ri-search-line"></i></label>
-         
-          </div>
+           <div className='relative max-w-[600px] w-full'>
+        <input
+          type='search'
+          className='border-[2px] border-solid border-black cursor-pointer px-3 py-2 w-full rounded-full'
+          placeholder='looking for...'
+          onChange={(e) => searchHandle(e)}
+          value={searchInput}
+          id='search'
+        />
+        <label htmlFor='search' className='absolute top-[13px] right-[15px] cursor-pointer'>
+          <i className='ri-search-line'></i>
+        </label>
+      </div>
         </ul>
         <div className="flex gap-[5px] justify-around items-center text-[1.3rem] sm:gap-[20px]">
           <Link>

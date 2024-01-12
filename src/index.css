@@ -54,3 +54,7 @@ input[type="radio"]{
     width: 20px;
     height: 20px;
 }
+.actfi{
+    position: fixed;
+    top: 0;
+}
