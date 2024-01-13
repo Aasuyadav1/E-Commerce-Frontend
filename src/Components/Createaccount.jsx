@@ -54,7 +54,7 @@ function Createaccount() {
               required
               placeholder="Last name"
             />
-            <div className="flex gap-3 mt-5">
+            <div className="flex gap-3 mt-5 items-center">
               <input
                 type="checkbox"
                 id="check"
@@ -67,7 +67,7 @@ function Createaccount() {
                 Sign Up for Newsletter
               </label>
             </div>
-            <div className="flex gap-3 mt-2">
+            <div className="flex gap-3 mt-2 items-center">
               <input
                 type="checkbox"
                 id="remote"
@@ -133,7 +133,7 @@ function Createaccount() {
               placeholder="Confirom password"
             />
             </div>
-            <div className="flex gap-3 mt-5">
+            <div className="flex gap-3 mt-5 items-center">
               <input
                 type="checkbox"
                 id="checkpass"

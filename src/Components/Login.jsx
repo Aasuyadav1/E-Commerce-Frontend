@@ -66,7 +66,7 @@ function Login() {
                   required
                   placeholder="password"
                 />
-                <div className="flex gap-3 mt-4">
+                <div className="flex gap-3 mt-4 items-center">
                   <input
                     type="checkbox"
                     id="check"
