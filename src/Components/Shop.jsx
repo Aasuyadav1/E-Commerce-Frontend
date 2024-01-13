@@ -85,17 +85,18 @@ function Shop() {
         <Link to="/">Home</Link> / <span className="opacity-70">Shop</span>
       </div>
 
-      <div className="block gap-2 lg:flex">
+      <div className="block lg:flex">
        <>
        <div  className={`max-w-[350px] overflow-y-auto w-full h-screen sticky top-20 left-0 bg-white duration-300 transition-all ease-in-out transform z-[999] ${
         activeFilter ? "translate-x-0 actfi block" : "-translate-x-[400px] hidden"
-      }  py-4 px-4 lg:translate-x-0 lg:block`}>
-      <i className="ri-close-line block lg:hidden absolute top-2 text-3xl right-1" onClick={() => setActiveFilter(!activeFilter)}></i>
-      <div>
-        <h2 className="text-3xl mt-2 uppercase ">Filter</h2>
+      }  lg:translate-x-0 lg:block`}>
+      
+      <div className="lg:hidden flex justify-between bg-black text-white items-center  py-4 px-4">
+        <h2 className="text-2xl mt-2 uppercase ">Filter</h2>
+        <i className="ri-close-line block lg:hidden  text-3xl right-1" onClick={() => setActiveFilter(!activeFilter)}></i>
       </div>
-      <div className={`duration-300 transition-all ease-in-out overflow-hidden ${categoryTrack ? 'h-fit' : 'h-[50px]' } `}>
-        <div className="flex gap-2 justify-between items-center text-lg  mt-4" onClick={()=>setCategoryTrack(!categoryTrack)}>
+      <div className={`duration-300 transition-all ease-in-out overflow-hidden  py-1 px-4 ${categoryTrack ? 'h-fit' : 'h-[50px]' } `}>
+        <div className="flex gap-2 justify-between items-center text-xl  mt-4" onClick={()=>setCategoryTrack(!categoryTrack)}>
           <h2 className="uppercase">Category</h2>
           <i className={`ri-arrow-up-s-line duration-300 transition-all ease-linear ${categoryTrack ? 'rotate-180' : 'rotate-0'} cursor-pointer`}></i>
         </div>
@@ -144,7 +145,7 @@ function Shop() {
           </div>
         </div>
       </div>
-      <div className={`duration-300 transition-all ease-in-out overflow-hidden ${sortedTrack ? 'h-fit' : 'h-[50px]' } `}>
+      <div className={`duration-300 transition-all ease-in-out overflow-hidden  py-4 px-4 ${sortedTrack ? 'h-fit' : 'h-[50px]' } `}>
         <div className="flex gap-2 justify-between items-center text-xl mt-1" onClick={()=>setSortedTrack(!sortedTrack)}>
           <h2 className="uppercase">sorted-by</h2>
           <i className={`ri-arrow-up-s-line duration-300 transition-all ease-linear ${sortedTrack ? 'rotate-180' : 'rotate-0'} cursor-pointer`}></i>

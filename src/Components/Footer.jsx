@@ -3,7 +3,7 @@ import Button from "./Button";
 
 function Footer() {
   return (
-    <div className="px-4 py-14 mt-24 grid grid-cols-1 gap-y-10 lg:grid-cols-4 lg:gap-x-2 border-y-[2px] border-[rgb(219,219,221)] border-solid">
+    <div className="px-4 py-20 mt-24 grid grid-cols-1 gap-y-10 lg:grid-cols-4 lg:gap-x-2 border-y-[2px] border-[rgb(219,219,221)] border-solid">
       <div>
         <img
           src="https://umino.mageblueskytech.com/media/logo/default/logo_umino.png"

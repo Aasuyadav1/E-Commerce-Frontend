@@ -58,3 +58,6 @@ input[type="radio"]{
     position: fixed;
     top: 0;
 }
+.serachheight{
+    max-height:  calc(100vh - 55px);
+}
