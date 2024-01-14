@@ -195,7 +195,7 @@ function Singleproduct() {
                 </div>
                 <div className="flex gap-2 items-center">
                   <p className="opacity-80">Free Shipping :</p>
-                  <p className="text-xl ">On all orders over $350</p>
+                  <p className="text-xl ">orders over $350</p>
                 </div>
               </div>
             </div>
