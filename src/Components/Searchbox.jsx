@@ -97,7 +97,7 @@ function Searchbox() {
           <Link to="/shoppingCart" className="hidden lg:block">
             <div className="relative hidden lg:block">
               <i className="ri-shopping-cart-line"></i>
-              <div className="absolute top-0 right-0 w-[15px] h-[15px] bg-red-600 flex justify-center items-center text-white rounded-full text-[10px] ">{cartCount}</div>
+              <div className="absolute top-0 right-0 w-[15px] h-[15px] bg-[#9C6D3A] flex justify-center items-center text-white rounded-full text-[10px] ">{cartCount}</div>
             </div>
           </Link>
         </div>

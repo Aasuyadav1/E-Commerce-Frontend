@@ -104,7 +104,7 @@ const toogleFalse = ()=>{
           <NavLink to="/shoppingCart">
             <div className="relative">
             <i className="ri-shopping-cart-line"></i>
-            <div className="absolute top-0 right-0 w-[15px] h-[15px] bg-red-600 flex justify-center items-center text-white rounded-full text-[10px] ">{cartCount}</div>
+            <div className="absolute top-0 right-0 w-[15px] h-[15px] bg-[#9C6D3A] flex justify-center items-center text-white rounded-full text-[10px] ">{cartCount}</div>
             </div>
           </NavLink>
         </div>
@@ -117,22 +117,22 @@ const toogleFalse = ()=>{
         ></div>
       )}
       <div className="fixed sm:hidden  bg-white w-full bottom-0 flex justify-around px-1 py-2 items-center left-0 gap-2 leading-none shadow-2xl shadow-black  z-10">
-        <Link to='/' onClick={toogleFalse} className="flex justify-center items-center flex-col">
+        <NavLink to='/' onClick={toogleFalse} className="flex justify-center items-center flex-col">
           <i className="ri-home-4-line text-[1.3rem]"></i>
           <p>Home</p>
-        </Link>
+        </NavLink>
         <Link className="flex justify-center items-center flex-col" onClick={navHandle}>
           <i className="ri-menu-line text-[1.3rem]"></i>
           <p>Menu</p>
         </Link>
-        <Link to='/login' onClick={toogleFalse} className="flex justify-center items-center flex-col">
+        <NavLink to='/login' onClick={toogleFalse} className="flex justify-center items-center flex-col">
           <i className="ri-user-line text-[1.3rem]"></i>
           <p>Account</p>
-        </Link>
-        <Link to='/shoppingCart' className="flex justify-center items-center flex-col">
+        </NavLink>
+        <NavLink to='/shoppingCart' className="flex justify-center items-center flex-col">
           <i className="ri-shopping-cart-line text-[1.3rem]"></i>
           <p>Cart</p>
-        </Link>
+        </NavLink>
       </div>
 
     </>

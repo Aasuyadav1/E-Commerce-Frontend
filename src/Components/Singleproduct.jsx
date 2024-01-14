@@ -24,6 +24,7 @@ function Singleproduct() {
   let month = date.getMonth() + 1;
   let year = date.getFullYear();
   let [relatedProduct, setRelatedProduct] = useState(null)
+  const [ActiveImage, setActiveImage] = useState('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
 
   useEffect(() => {
     const filteredData = productData.filter((cur) => cur.id == id);
@@ -75,10 +76,15 @@ function Singleproduct() {
       }
     }
   };
+  // useEffect(()=>{
+  //   activeData.length > 0 ? setActiveImage(activeData[0].productImage) : setActiveImage('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
+  // },[activeData])
+  // const acuurentImage = (imageUrl)=>{
+  //     setActiveImage(imageUrl)
+
+  // }
   
-  
-  
-  
+ 
   
   
 
@@ -87,12 +93,23 @@ function Singleproduct() {
       {activeData.length > 0 ? (
         <div>
           <div className="px-4 flex flex-col md:flex-row items-start gap-8">
+            <div>
             <div className="max-w-[650px] w-full aspect-[1/1.2] rounded overflow-hidden cursor-pointer object-cover">
               <img
                 src={activeData[0].productImage || <Skeleton /> }
                 alt=""
                 className="w-full h-full object-cover"
               />
+            </div>
+            {/* <div className="flex gap-4 mt-4 cursor-pointer">
+              {
+                activeData[0].images.map((curimage,index)=>
+                  <div key={index} onClick={()=>acuurentImage(curimage.url)} className="w-[80px] rounded-md overflow-hidden aspect-[1/1.2] object-cover">
+                    <img src={curimage.url} className="w-full h-full object-cover" alt="" />
+                  </div>
+                )
+              }
+            </div> */}
             </div>
             <div>
               <div className="text-xl bg-[#9C6D3A] text-white rounded-full flex justify-center items-center px-4 py-0 flex-wrap w-fit">
@@ -116,7 +133,7 @@ function Singleproduct() {
               </p>
               <p className="mt-8 text-xl">{activeData[0].description || <Skeleton />}</p>
               <p className="text-xl mt-5">
-                {Math.floor(Math.random() * (2000 - 1000 + 1)) + 1000} people
+                {5000} people
                 are viewing this right now
               </p>
               <div className="text-xl flex gap-8 mt-8">
@@ -140,7 +157,7 @@ function Singleproduct() {
               </p>
               <div className="w-full rounded-full h-[6px] bg-[#B6783A] mt-4"></div>
               <div className="flex sm:gap-10 mt-6 gap-2">
-                <div className="flex gap-6 justify-center items-center text-xl bg-[rgb(242,242,242)] w-fit py-0 px-6 rounded-full shadow-md">
+                <div className="flex gap-6 justify-center items-center text-xl bg-[rgb(242,242,242)] max-w-[150px] py-0 px-6 rounded-full shadow-md">
                   <i className="ri-subtract-fill text-2xl cursor-pointer" onClick={()=>handleSub(activeData[0].id)}></i>
                   <p>{activeData[0].quantity || <Skeleton />}</p>
                   <i className="ri-add-line cursor-pointer" onClick={()=>handleAdd(activeData[0].id)}></i>
@@ -177,7 +194,7 @@ function Singleproduct() {
                   <p className="text-xl ">{`${wholeDate} - ${month} - ${year}`}</p>
                 </div>
                 <div className="flex gap-2 items-center">
-                  <p className="opacity-80">Estimated Delivery:</p>
+                  <p className="opacity-80">Free Shipping :</p>
                   <p className="text-xl ">On all orders over $350</p>
                 </div>
               </div>
