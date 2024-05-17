@@ -1,13 +1,50 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
+
 
 function Createaccount() {
   const [passwordType, setPasswordType] = useState("password");
+  const [loader, setLoader] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  })
 
   const handleCheckBox = (e) => {
     const checkboxValue = e.target.checked;
     checkboxValue ? setPasswordType("text") : setPasswordType("password");
   };
+
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(!formData.name || !formData.email || !formData.password){
+      alert('Please enter name, email and password')
+      return
+    }
+    try {
+      setLoader(true)
+      const response = await axios.post(`https://reqres.in/api/users`, formData)
+
+      if(response.ok){
+        setFormData({
+          name: "",
+          email: "",
+          password: ""
+        })
+        setLoader(false)
+      }
+    } catch (error) {
+      console.log("axios error", error)
+      setLoader(false)
+    } finally {
+      setLoader(false)
+    }
+  }
+
+
   return (
     <div className="mt-32 px-3">
       <h1 className="text-4xl text-black text-center mt-4 font-semibold px-3">
@@ -18,7 +55,7 @@ function Createaccount() {
         <span className="opacity-70">Create New Customer Account</span>
       </div>
 
-      <form className="sm:mt-24 mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-32 gap-y-10 px-3 lg:px-24">
+      <form onSubmit={handleSubmit} className="sm:mt-24 mt-10 grid grid-cols-1 sm:grid-cols-2 gap-x-32 gap-y-10 px-3 lg:px-24">
         <div>
           <h1 className="text-black text-2xl font-semibold">
             Personal Information
@@ -28,7 +65,7 @@ function Createaccount() {
               htmlFor="name"
               className="block select-none font-medium mb-2 text-xl"
             >
-              First Name
+               Name
             </label>
             <input
               type="name"
@@ -36,50 +73,9 @@ function Createaccount() {
               name="name"
               required
               className="py-2 px-4 block w-full border-black border-[1px] border-solid  focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none rounded-full "
-              placeholder="first name"
+              placeholder=" name"
+              onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })}
             />
-          </div>
-          <div className="mt-5">
-            <label
-              htmlFor="last"
-              className="block select-none font-medium mb-2 text-xl"
-            >
-              Last Name
-            </label>
-            <input
-              type={passwordType}
-              id="last"
-              name="last-name"
-              className="py-2 px-4 block w-full border-black border-[1px] border-solid  focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none rounded-full "
-              required
-              placeholder="Last name"
-            />
-            <div className="flex gap-3 mt-5 items-center">
-              <input
-                type="checkbox"
-                id="check"
-                name="checkbox"
-                className="text-black duration-75 ease-in-out"
-               
-              />
-              <label htmlFor="check" className="cursor-pointer select-none">
-                {" "}
-                Sign Up for Newsletter
-              </label>
-            </div>
-            <div className="flex gap-3 mt-2 items-center">
-              <input
-                type="checkbox"
-                id="remote"
-                name="remote"
-                className="text-black duration-75 ease-in-out"
-               
-              />
-              <label htmlFor="remote" className="cursor-pointer select-none">
-                {" "}
-                Allow remote shopping assistance
-              </label>
-            </div>
           </div>
         </div>
         <div>
@@ -100,6 +96,7 @@ function Createaccount() {
               required
               className="py-2 px-4 block w-full border-black border-[1px] border-solid  focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none rounded-full "
               placeholder="email"
+              onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })}
             />
           </div>
           <div className="mt-5">
@@ -112,43 +109,17 @@ function Createaccount() {
             <input
               type={passwordType}
               id="pass"
-              name="pass"
+              name="password"
               className="py-2 px-4 block w-full border-black border-[1px] border-solid  focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none rounded-full "
               required
               placeholder="password"
+              onChange={(e) => setFormData({ ...formData, [e.target.name]: e.target.value })}
             />
-            <div className="mt-5">
-            <label
-              htmlFor="conpass"
-              className="block select-none font-medium mb-2 text-xl"
-            >
-              Confirom Password
-            </label>
-            <input
-              type={passwordType}
-              id="conpass"
-              name="conpass"
-              className="py-2 px-4 block w-full border-black border-[1px] border-solid  focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none rounded-full "
-              required
-              placeholder="Confirom password"
-            />
-            </div>
-            <div className="flex gap-3 mt-5 items-center">
-              <input
-                type="checkbox"
-                id="checkpass"
-                name="checkbox"
-                className="text-black duration-75 ease-in-out"
-                onChange={handleCheckBox}
-              />
-              <label htmlFor="checkpass" className="cursor-pointer select-none">
-                {" "}
-                Sign Up for Newsletter
-              </label>
-            </div>
+        
+         
           </div>
-          <button className="uppercase w-full bg-black outline-none text-white py-4 px-4 rounded-full mt-8">
-            Create An Account
+          <button type="submit" className={`uppercase w-full bg-black outline-none text-white py-4 px-4 rounded-full mt-8 ${loader && "cursor-not-allowed opacity-50 "} `} disabled={loader}>
+            {loader ? "signing in..." : "Sign In"}
           </button>
         </div>
       </form>

@@ -1,8 +1,16 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [passwordType, setPasswordType] = useState("password");
+ 
+  const [loader, setLoader] = useState(false)
+
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  })
 
   const navigate = useNavigate()
 
@@ -11,9 +19,41 @@ function Login() {
     checkboxValue ? setPasswordType("text") : setPasswordType("password");
   };
 
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
 
   const createAccount = ()=>{
     navigate('/createaccount')
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if(!formData.email || !formData.password){
+      alert('Please enter email and password')
+      return
+    }
+    try {
+      setLoader(true)
+      const response = await axios.post(`https://reqres.in/api/login`, formData)
+
+      const data = await response.data
+
+      if(response.ok){
+        setFormData({
+          email: '',
+          password: ''
+        })
+      } 
+    } catch (error) {
+      console.log("axios error", error)
+      alert(error.message)
+    } finally {
+      setLoader(false)
+    }
   }
 
   return (
@@ -34,7 +74,7 @@ function Login() {
             <p className="text-black mt-4 opacity-90">
               If you have an account, sign in with your email address.
             </p>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mt-5">
                 <label
                   htmlFor="email"
@@ -49,6 +89,7 @@ function Login() {
                   required
                   className="py-2 px-4 block w-full border-black border-[1px] border-solid  focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none rounded-full "
                   placeholder="Email"
+                  onChange={handleChange}
                 />
               </div>
               <div className="mt-5">
@@ -61,10 +102,11 @@ function Login() {
                 <input
                   type={passwordType}
                   id="pass"
-                  name="email"
+                  name="password"
                   className="py-2 px-4 block w-full border-black border-[1px] border-solid  focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none rounded-full "
                   required
                   placeholder="password"
+                  onChange={handleChange}
                 />
                 <div className="flex gap-3 mt-4 items-center">
                   <input
@@ -80,8 +122,8 @@ function Login() {
                   </label>
                 </div>
               </div>
-              <button className="uppercase w-full bg-black outline-none text-white py-4 px-4 rounded-full mt-6">
-                Sign In
+              <button type="submit"  disabled={loader} className={`uppercase w-full bg-black ${loader && "cursor-not-allowed opacity-50 "} outline-none text-white py-4 px-4 rounded-full mt-6`}>
+                {loader ? "signing in..." : "Sign In"}
               </button>
               <div className="flex justify-between items-center gap-2 mt-4">
                 <p className="text-red-500 ">Requireds Fields *</p>
