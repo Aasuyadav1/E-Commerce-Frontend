@@ -1,8 +1,26 @@
-# React + Vite
+# E-Commerce Website with React, Tailwind CSS, and Zustand
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a simple e-commerce website built with React.js, Tailwind CSS, and Zustand. It includes functionalities like adding products to the cart, category filtering, and search.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Features
+
+- **Add to Cart**: Users can add products to their cart.
+- **Category Filter**: Users can filter products by categories.
+- **Search**: Users can search for products by name.
+
+## Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/ecommerce-react-tailwind-zustand.git
+   cd ecommerce-react-tailwind-zustand
