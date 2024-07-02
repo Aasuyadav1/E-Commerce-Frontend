@@ -1,26 +1,23 @@
-# E-Commerce Website with React, Tailwind CSS, and Zustand
+# E-commerce Frontend
 
-This project is a simple e-commerce website built with React.js, Tailwind CSS, and Zustand. It includes functionalities like adding products to the cart, category filtering, and search.
+E-commerce frontend built with React.js, Zustand, and Tailwind CSS, featuring add-to-cart, product filtering, and search functionality.
 
-## Table of Contents
+![E-commerce Frontend](https://res.cloudinary.com/driaaeuhp/image/upload/v1719924190/myPortfolio/private/laimn7djcwatrzgahhpc.png)
 
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
+## Live Demo
+
+Check out the live demo [here](https://e-commerce-ready-apy.vercel.app/).
 
 ## Features
 
-- **Add to Cart**: Users can add products to their cart.
-- **Category Filter**: Users can filter products by categories.
-- **Search**: Users can search for products by name.
+- Add to cart
+- Product filtering
+- Search functionality
 
-## Installation
+## Technologies Used
 
-1. **Clone the repository:**
+- React.js
+- Zustand
+- Tailwind CSS
 
-   ```bash
-   git clone https://github.com/your-username/ecommerce-react-tailwind-zustand.git
-   cd ecommerce-react-tailwind-zustand
+
