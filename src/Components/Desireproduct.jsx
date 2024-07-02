@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { dataContext } from '../Productdata'
+import { dataContext } from '../context/Productdata'
 
 function Desireproduct() {
   const {productData} = useContext(dataContext)

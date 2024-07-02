@@ -4,8 +4,8 @@ import Header from './Components/Header';
 import Footer from './Components/Footer';
 import Scrolltop from './Components/Scrolltop';
 import Searchbox from './Components/Searchbox';
-import Cart from './Cart';
-import { dataContext } from './Productdata';
+import Cart from './context/Cart';
+import { dataContext } from './context/Productdata';
 import ScrollToTop from "react-scroll-to-top";
 
 function Layout() {

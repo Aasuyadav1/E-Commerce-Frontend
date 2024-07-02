@@ -1,5 +1,5 @@
 import React from "react";
-import useTrendingProducts from "../TrendingProduct"
+import useTrendingProducts from "../context/TrendingProduct";
 import { Link, useNavigate } from "react-router-dom";
 
 function Trending() {

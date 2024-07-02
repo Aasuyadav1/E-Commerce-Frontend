@@ -1,21 +1,17 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { dataContext } from "../Productdata";
+import { dataContext } from "../context/Productdata";
 import Button from "./Button";
 import { Link } from "react-router-dom";
-import { cartContext } from "../Cart";
+import { cartContext } from "../context/Cart";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
-
-
 function Singleproduct() {
+
   const {productData, setProductData} = useContext(dataContext)
   
- 
   const {cartItems, setCartItems} = useContext(cartContext)
-
-
 
   let { id } = useParams();
   const [activeData, setActiveData] = useState([]);
@@ -38,6 +34,7 @@ function Singleproduct() {
     
   
   }, [id,location.path]);
+
   const handleAdd = (productId) => {
     setActiveData((prev) =>
       prev.map((cur) =>
@@ -76,18 +73,7 @@ function Singleproduct() {
       }
     }
   };
-  // useEffect(()=>{
-  //   activeData.length > 0 ? setActiveImage(activeData[0].productImage) : setActiveImage('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')
-  // },[activeData])
-  // const acuurentImage = (imageUrl)=>{
-  //     setActiveImage(imageUrl)
-
-  // }
   
- 
-  
-  
-
   return (
     <div className="mt-[150px]">
       {activeData.length > 0 ? (

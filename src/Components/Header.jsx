@@ -1,11 +1,11 @@
 import * as React from "react";
 import { Link,NavLink, useNavigate} from "react-router-dom";
 import '../App.css';
-import { cartContext } from "../Cart";
+import { cartContext } from "../context/Cart";
 import { useContext } from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { dataContext } from "../Productdata";
+import { dataContext } from "../context/Productdata";
 
 function Header() {
   const navigate = useNavigate()
