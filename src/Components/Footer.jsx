@@ -6,7 +6,7 @@ function Footer() {
     <div className="px-4 py-20 mt-24 grid grid-cols-1 gap-y-10 lg:grid-cols-4 lg:gap-x-2 border-y-[2px] border-[rgb(219,219,221)] border-solid">
       <div>
         <img
-          src="https://umino.mageblueskytech.com/media/logo/default/logo_umino.png"
+          src="https://res.cloudinary.com/driaaeuhp/image/upload/v1745697279/public_assets/e2eoqbmgwhdog0aqke1t.png"
           alt="logo"
           className="max-w-[100px] h-auto"
         />

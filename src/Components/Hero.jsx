@@ -4,16 +4,12 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 function Hero() {
-
   const buttonHnadle = () => {
     window.scrollTo({
       top: 1200, // Adjust the value based on your desired scroll position
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
-  
-
-
 
   const responsive = {
     desktop: {
@@ -62,13 +58,16 @@ function Hero() {
             Upgrade your home with our amazing assortement of decor.
           </p>
           <Link>
-            <button className="py-[15px] px-[50px] bg-[#111111] inline-block font-semibold text-white rounded-full mt-[30px]" onClick={buttonHnadle}>
+            <button
+              className="py-[15px] px-[50px] bg-[#111111] inline-block font-semibold text-white rounded-full mt-[30px]"
+              onClick={buttonHnadle}
+            >
               EXPLORE NOW
             </button>
           </Link>
         </div>
       </div>
-      <div className=" bg-[url(https://umino.mageblueskytech.com/media/revslider/s1_d1.jpg)] lg:h-screen sm:h-[500px] h-[450px]  w-full  bg-left bg-no-repeat bg-cover flex items-center  ">
+      <div className=" bg-[url(https://images.unsplash.com/photo-1518972734183-c5b490a7c637?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)] lg:h-screen sm:h-[500px] h-[450px]  w-full  bg-left bg-no-repeat bg-cover flex items-center  ">
         <div className="flex flex-col gap-[10px] mt-16 sm:pl-[80px] px-4">
           <p className="uppercase text-[1rem] font-medium">TOp trending</p>
           <h3 className="text-[5rem] leading-none">Life</h3>
@@ -76,7 +75,10 @@ function Hero() {
             Upgrade your home with our amazing assortement of decor.
           </p>
           <Link>
-            <button className="py-[15px] px-[50px] bg-[#111111] inline-block font-semibold text-white rounded-full mt-[30px]" onClick={buttonHnadle}>
+            <button
+              className="py-[15px] px-[50px] bg-[#111111] inline-block font-semibold text-white rounded-full mt-[30px]"
+              onClick={buttonHnadle}
+            >
               EXPLORE NOW
             </button>
           </Link>

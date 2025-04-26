@@ -62,7 +62,7 @@ function Searchbox() {
 
         <Link className="logo max-w-full hidden lg:block" to="/">
           <img
-            src="https://umino.mageblueskytech.com/media/logo/default/logo_umino.png"
+            src="https://res.cloudinary.com/driaaeuhp/image/upload/v1745697279/public_assets/e2eoqbmgwhdog0aqke1t.png"
             alt="logo"
             className="max-w-[100px] h-auto"
           />
